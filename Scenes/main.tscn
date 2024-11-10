@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcutmphx0cacs"]
+
+[ext_resource type="PackedScene" uid="uid://c0f78wpbcxlu8" path="res://Scenes/walls.tscn" id="1_kno1j"]
+[ext_resource type="PackedScene" uid="uid://dqpbp3ag31b6o" path="res://Scenes/player.tscn" id="2_nla1h"]
+[ext_resource type="PackedScene" uid="uid://duinb6o8edl86" path="res://Scenes/alien.tscn" id="3_87dpw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Walls" parent="." instance=ExtResource("1_kno1j")]
+
+[node name="Player" parent="." instance=ExtResource("2_nla1h")]
+
+[node name="Alien" parent="." instance=ExtResource("3_87dpw")]
+position = Vector2(576, 216)

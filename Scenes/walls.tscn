@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0f78wpbcxlu8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sir6n"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4rtu2"]
+
+[node name="Walls" type="StaticBody2D"]
+
+[node name="LeftWall" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_sir6n")
+
+[node name="RightWall" type="CollisionShape2D" parent="."]
+position = Vector2(1152, 0)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_4rtu2")

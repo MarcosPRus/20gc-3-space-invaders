@@ -11,10 +11,18 @@ config_version=5
 [application]
 
 config/name="20GC - 3 - Space Invaders"
+run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+boot_splash/stretch/mode="disabled"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
