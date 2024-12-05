@@ -1,6 +1,6 @@
 extends Node
 var score : int
-var lifes : int = 3
+var lives : int = 3
 
 
 # Called when the node enters the scene tree for the first time.
