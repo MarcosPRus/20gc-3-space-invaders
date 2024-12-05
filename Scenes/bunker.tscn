@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://ix1x138e0ngk"]
+
+[ext_resource type="PackedScene" uid="uid://e0e5bvgbitfr" path="res://Scenes/bunker_cell.tscn" id="1_cs2eq"]
+
+[node name="Bunker" type="Node2D"]
+
+[node name="BunkerCell" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(0, -8)
+
+[node name="BunkerCell2" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(-16, -8)
+
+[node name="BunkerCell8" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(-32, 8)
+
+[node name="BunkerCell10" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(-32, 24)
+
+[node name="BunkerCell11" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(32, 8)
+
+[node name="BunkerCell9" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(32, 24)
+
+[node name="BunkerCell6" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(-32, -8)
+cell_type = 3
+
+[node name="BunkerCell3" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(16, -8)
+
+[node name="BunkerCell7" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(32, -8)
+rotation = 1.5708
+cell_type = 3
+
+[node name="BunkerCell4" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(-16, 8)
+rotation = 3.14159
+cell_type = 3
+
+[node name="BunkerCell5" parent="." instance=ExtResource("1_cs2eq")]
+position = Vector2(16, 8)
+rotation = -1.5708
+cell_type = 3

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://xl8ph8gws5k1"]
+
+[ext_resource type="Script" path="res://Scripts/missile.gd" id="1_46w74"]
+[ext_resource type="Texture2D" uid="uid://b23q8hpqxx6vd" path="res://Assets/Missile.png" id="1_vmfbw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvauv"]
+atlas = ExtResource("1_vmfbw")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76w21"]
+atlas = ExtResource("1_vmfbw")
+region = Rect2(8, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8is62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvauv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76w21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cxy"]
+size = Vector2(8, 16)
+
+[node name="Missile" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_46w74")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8is62")
+autoplay = "default"
+frame_progress = 0.244654
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a4cxy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

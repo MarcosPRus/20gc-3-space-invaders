@@ -1,14 +1,204 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcutmphx0cacs"]
+[gd_scene load_steps=9 format=3 uid="uid://bcutmphx0cacs"]
 
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_k4576"]
 [ext_resource type="PackedScene" uid="uid://c0f78wpbcxlu8" path="res://Scenes/walls.tscn" id="1_kno1j"]
 [ext_resource type="PackedScene" uid="uid://dqpbp3ag31b6o" path="res://Scenes/player.tscn" id="2_nla1h"]
 [ext_resource type="PackedScene" uid="uid://duinb6o8edl86" path="res://Scenes/alien.tscn" id="3_87dpw"]
+[ext_resource type="Resource" uid="uid://t8tne2pr8h1w" path="res://Resources/weak_alien.tres" id="4_fw5yq"]
+[ext_resource type="PackedScene" uid="uid://mpnrd2kfdj2a" path="res://Scenes/hud.tscn" id="4_mc65g"]
+[ext_resource type="PackedScene" uid="uid://ix1x138e0ngk" path="res://Scenes/bunker.tscn" id="7_rac8b"]
+
+[sub_resource type="Curve2D" id="Curve2D_2mvrb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 0, 48, 16, 0, 0, 0, 0, -48, 16, 0, 0, 0, 0, -48, 32, 0, 0, 0, 0, 48, 32, 0, 0, 0, 0, 48, 48, 0, 0, 0, 0, -48, 48, 0, 0, 0, 0, -48, 64, 0, 0, 0, 0, 48, 64, 0, 0, 0, 0, 48, 80, 0, 0, 0, 0, -48, 80, 0, 0, 0, 0, -48, 96, 0, 0, 0, 0, 48, 96, 0, 0, 0, 0, 48, 112, 0, 0, 0, 0, -48, 112, 0, 0, 0, 0, -48, 128, 0, 0, 0, 0, 48, 128)
+}
+point_count = 18
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_k4576")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Bunker" parent="." instance=ExtResource("7_rac8b")]
+position = Vector2(576, 496)
+
+[node name="Bunker2" parent="." instance=ExtResource("7_rac8b")]
+position = Vector2(336, 496)
+
+[node name="Bunker3" parent="." instance=ExtResource("7_rac8b")]
+position = Vector2(96, 496)
+
+[node name="Bunker4" parent="." instance=ExtResource("7_rac8b")]
+position = Vector2(1056, 496)
+
+[node name="Bunker5" parent="." instance=ExtResource("7_rac8b")]
+position = Vector2(816, 496)
 
 [node name="Walls" parent="." instance=ExtResource("1_kno1j")]
 
 [node name="Player" parent="." instance=ExtResource("2_nla1h")]
 
-[node name="Alien" parent="." instance=ExtResource("3_87dpw")]
+[node name="HUD" parent="." instance=ExtResource("4_mc65g")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2mvrb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotates = false
+
+[node name="Alien" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(192, 88)
+
+[node name="Alien2" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(96, 88)
+
+[node name="Alien4" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(1056, 88)
+
+[node name="Alien5" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(960, 88)
+
+[node name="Alien6" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(864, 88)
+
+[node name="Alien7" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(768, 88)
+
+[node name="Alien8" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(672, 88)
+
+[node name="Alien9" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(576, 88)
+
+[node name="Alien10" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(480, 88)
+
+[node name="Alien11" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(384, 88)
+
+[node name="Alien12" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(288, 88)
+
+[node name="Alien13" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(192, 152)
+
+[node name="Alien14" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(96, 152)
+
+[node name="Alien16" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(1056, 152)
+
+[node name="Alien17" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(960, 152)
+
+[node name="Alien18" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(864, 152)
+
+[node name="Alien19" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(768, 152)
+
+[node name="Alien20" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(672, 152)
+
+[node name="Alien21" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(576, 152)
+
+[node name="Alien22" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(480, 152)
+
+[node name="Alien23" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(384, 152)
+
+[node name="Alien24" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(288, 152)
+
+[node name="Alien25" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(192, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien26" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(96, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien28" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(1056, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien29" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(960, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien30" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(864, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien31" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(768, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien32" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(672, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien33" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
 position = Vector2(576, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien34" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(480, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien35" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(384, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien36" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(288, 216)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien37" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(192, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien38" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(96, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien40" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(1056, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien41" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(960, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien42" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(864, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien43" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(768, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien44" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(672, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien45" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(576, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien46" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(480, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien47" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(384, 280)
+stats = ExtResource("4_fw5yq")
+
+[node name="Alien48" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
+position = Vector2(288, 280)
+stats = ExtResource("4_fw5yq")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

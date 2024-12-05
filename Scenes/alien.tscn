@@ -1,15 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://duinb6o8edl86"]
+[gd_scene load_steps=9 format=3 uid="uid://duinb6o8edl86"]
 
 [ext_resource type="Texture2D" uid="uid://f6sph42xwrs5" path="res://Assets/Alien.png" id="1_23crq"]
+[ext_resource type="Script" path="res://Scripts/alien.gd" id="1_i4lsy"]
+[ext_resource type="Resource" uid="uid://cso3duuwfu6i5" path="res://Resources/middle_alien.tres" id="2_nrwhq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83han"]
+atlas = ExtResource("1_23crq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnlvs"]
+atlas = ExtResource("1_23crq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r50yr"]
+atlas = ExtResource("1_23crq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_px36v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83han")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnlvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r50yr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbwlt"]
 size = Vector2(64, 48)
 
 [node name="Alien" type="Area2D"]
+script = ExtResource("1_i4lsy")
+stats = ExtResource("2_nrwhq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_23crq")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_px36v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_lbwlt")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

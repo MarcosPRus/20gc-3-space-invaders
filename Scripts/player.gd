@@ -1,7 +1,19 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
+
+var missile_scene := preload("res://Scenes/missile.tscn")
+
+@onready var timer := $BulletCD
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_up") and timer.is_stopped():
+		var missile = missile_scene.instantiate()
+		missile.position = self.position + Vector2.UP*25
+		get_tree().current_scene.add_child(missile)
+		
+		timer.start()
 
 
 func _physics_process(delta: float) -> void:

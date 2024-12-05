@@ -16,9 +16,17 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 boot_splash/stretch/mode="disabled"
 
+[autoload]
+
+ScoreBoard="*res://Scripts/score_board.gd"
+
 [display]
 
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_2="Bunkers"
 
 [rendering]
 

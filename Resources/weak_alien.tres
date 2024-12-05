@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AlienStats" load_steps=2 format=3 uid="uid://t8tne2pr8h1w"]
+
+[ext_resource type="Script" path="res://Scripts/alien_stats.gd" id="1_fvwu4"]
+
+[resource]
+script = ExtResource("1_fvwu4")
+points = 100
+sprite_id = 0
