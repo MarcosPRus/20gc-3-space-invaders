@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdantnw8s6lsb"]
+
+[ext_resource type="Script" path="res://Scenes/mothership.gd" id="1_mdrj6"]
+[ext_resource type="Texture2D" uid="uid://cr1pxup65nt60" path="res://Assets/Mothership.png" id="2_xi1vt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbwlt"]
+size = Vector2(64, 32)
+
+[node name="Mothership" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_mdrj6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xi1vt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lbwlt")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

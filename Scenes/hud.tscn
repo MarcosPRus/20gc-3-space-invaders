@@ -12,29 +12,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_50iis")
 
-[node name="ScoreLabel" type="Label" parent="."]
-layout_mode = 2
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 offset_left = 5.0
 offset_top = 4.0
 offset_right = 6.0
 offset_bottom = 27.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_left = 960.0
 offset_right = 1024.0
 offset_bottom = 64.0
 texture = ExtResource("2_smcgn")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 offset_left = 1024.0
 offset_right = 1088.0
 offset_bottom = 64.0
 texture = ExtResource("2_smcgn")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-layout_mode = 2
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
 offset_left = 1088.0
 offset_right = 1152.0
 offset_bottom = 64.0

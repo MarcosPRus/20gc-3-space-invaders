@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcutmphx0cacs"]
+[gd_scene load_steps=10 format=3 uid="uid://bcutmphx0cacs"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_k4576"]
 [ext_resource type="PackedScene" uid="uid://c0f78wpbcxlu8" path="res://Scenes/walls.tscn" id="1_kno1j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://t8tne2pr8h1w" path="res://Resources/weak_alien.tres" id="4_fw5yq"]
 [ext_resource type="PackedScene" uid="uid://mpnrd2kfdj2a" path="res://Scenes/hud.tscn" id="4_mc65g"]
 [ext_resource type="PackedScene" uid="uid://ix1x138e0ngk" path="res://Scenes/bunker.tscn" id="7_rac8b"]
+[ext_resource type="Texture2D" uid="uid://cr1pxup65nt60" path="res://Assets/Mothership.png" id="8_ckr18"]
 
 [sub_resource type="Curve2D" id="Curve2D_2mvrb"]
 _data = {
@@ -200,5 +201,9 @@ stats = ExtResource("4_fw5yq")
 [node name="Alien48" parent="Path2D/PathFollow2D" instance=ExtResource("3_87dpw")]
 position = Vector2(288, 280)
 stats = ExtResource("4_fw5yq")
+
+[node name="Mothership" type="Sprite2D" parent="."]
+position = Vector2(896, 32)
+texture = ExtResource("8_ckr18")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

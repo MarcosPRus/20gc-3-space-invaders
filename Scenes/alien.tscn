@@ -37,6 +37,7 @@ animations = [{
 size = Vector2(64, 48)
 
 [node name="Alien" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_i4lsy")
 stats = ExtResource("2_nrwhq")
 

@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://xl8ph8gws5k1"]
+[gd_scene load_steps=7 format=3 uid="uid://exabyt0xwq55"]
 
-[ext_resource type="Script" path="res://Scripts/missile.gd" id="1_46w74"]
-[ext_resource type="Texture2D" uid="uid://b23q8hpqxx6vd" path="res://Assets/Missile.png" id="1_vmfbw"]
+[ext_resource type="Script" path="res://Scenes/enemy_missile.gd" id="1_tlsa6"]
+[ext_resource type="Texture2D" uid="uid://b23q8hpqxx6vd" path="res://Assets/Missile.png" id="2_k6boo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tvauv"]
-atlas = ExtResource("1_vmfbw")
+atlas = ExtResource("2_k6boo")
 region = Rect2(0, 0, 8, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76w21"]
-atlas = ExtResource("1_vmfbw")
+atlas = ExtResource("2_k6boo")
 region = Rect2(8, 0, 8, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8is62"]
@@ -29,8 +29,9 @@ animations = [{
 size = Vector2(8, 16)
 
 [node name="Missile" type="Area2D"]
-collision_mask = 6
-script = ExtResource("1_46w74")
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_tlsa6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8is62")
